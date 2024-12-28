@@ -12,13 +12,7 @@ load("//bazel:upb_proto_reflection_library.bzl", "upb_proto_reflection_library")
 load("//build_defs:cpp_opts.bzl", "COPTS", "LINK_OPTS")
 load("//upb/cmake:build_defs.bzl", "staleness_test")
 
-package(
-    default_visibility = [
-        "//:__pkg__",  # "public" targets are alias rules in //.
-        "//json:__subpackages__",
-        "//src/google/protobuf:__subpackages__",
-    ],
-)
+package(default_visibility = ["//visibility:public"])
 
 proto_library(
     name = "any_proto",
